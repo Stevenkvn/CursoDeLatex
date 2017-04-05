@@ -1,0 +1,283 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	Clase, paquetes y configuraciones
+%----------------------------------------------------------------------------------------
+
+
+\documentclass[a3paper]{tufte-handout}
+
+\newcommand{\workingDate}{\textsc{Junio $|$ 2029}}
+\newcommand{\userName}{Andr\'es Tm}
+\newcommand{\institution}{EPN}
+
+
+\usepackage{lab_notes}
+%	Para ver el alcance de este paquete, les recomiendo revisar el siguiente enlace:
+%	https://www.overleaf.com/8888765vbzvpyqwncsv
+
+\usepackage{hyperref}
+\hypersetup{
+    pdffitwindow = false,            % window fit to page
+    pdfstartview = {Fit},            % fits width of page to window
+    pdftitle = {Breve análisis de un texto literario 2017},     % document title
+    pdfauthor = {Andrés Mt},         % author name
+    pdfsubject = {hellow},                 % document topic(s)
+    pdfnewwindow = true,             % links in new window
+    colorlinks = true,               % coloured links, not boxed
+    linkcolor = DarkScarletRed,      % colour of internal links
+    citecolor = DarkChameleon,       % colour of links to bibliography
+    filecolor = DarkPlum,            % colour of file links
+    urlcolor = DarkSkyBlue           % colour of external links
+}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nolayout,es-nodecimaldot,es-tabla]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{bigdelim}
+\usepackage{booktabs}
+\usepackage{epsfig}
+\usepackage{extract}
+\usepackage{fancyhdr}
+\usepackage{framed}
+\usepackage{graphicx}
+\graphicspath{ {figures/} }
+%\usepackage{multibib}
+\usepackage{multirow}
+\usepackage{pdflscape}
+\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{textcomp}
+\usepackage{url}
+\usepackage{wrapfig}
+
+
+% Define a custom color set.
+\usepackage{xcolor}
+\definecolor{tenPercentGrey}{gray}{0.9}
+
+% COLORS (Tango) Mostly by Philip Bunge
+% http://pbunge.crimson.ch/
+\definecolor{White}{gray}{0.9}
+\definecolor{Black}{gray}{0.0}
+\definecolor{LightButter}{rgb}{0.98,0.91,0.31}
+\definecolor{LightOrange}{rgb}{0.98,0.68,0.24}
+\definecolor{LightChocolate}{rgb}{0.91,0.72,0.43}
+\definecolor{LightChameleon}{rgb}{0.54,0.88,0.20}
+\definecolor{LightSkyBlue}{rgb}{0.45,0.62,0.81}
+\definecolor{LightPlum}{rgb}{0.68,0.50,0.66}
+\definecolor{LightScarletRed}{rgb}{0.93,0.16,0.16}
+\definecolor{Butter}{rgb}{0.93,0.86,0.25}
+\definecolor{Orange}{rgb}{0.96,0.47,0.00}
+\definecolor{Chocolate}{rgb}{0.75,0.49,0.07}
+\definecolor{Chameleon}{rgb}{0.45,0.82,0.09}
+\definecolor{SkyBlue}{rgb}{0.20,0.39,0.64}
+\definecolor{Plum}{rgb}{0.46,0.31,0.48}
+\definecolor{ScarletRed}{rgb}{0.80,0.00,0.00}
+\definecolor{DarkButter}{rgb}{0.77,0.62,0.00}
+\definecolor{DarkOrange}{rgb}{0.80,0.36,0.00}
+\definecolor{DarkChocolate}{rgb}{0.56,0.35,0.01}
+\definecolor{DarkChameleon}{rgb}{0.30,0.60,0.02}
+\definecolor{DarkSkyBlue}{rgb}{0.12,0.29,0.53}
+\definecolor{DarkPlum}{rgb}{0.36,0.21,0.40}
+\definecolor{DarkScarletRed}{rgb}{0.64,0.00,0.00}
+\definecolor{Aluminium1}{rgb}{0.93,0.93,0.92}
+\definecolor{Aluminium2}{rgb}{0.82,0.84,0.81}
+\definecolor{Aluminium3}{rgb}{0.73,0.74,0.71}
+\definecolor{Aluminium4}{rgb}{0.53,0.54,0.52}
+\definecolor{Aluminium5}{rgb}{0.33,0.34,0.32}
+\definecolor{Aluminium6}{rgb}{0.18,0.20,0.21}
+
+
+%%% LISTINGS
+\usepackage{listings}
+\lstset{
+  backgroundcolor=\color{tenPercentGrey}, %
+  basicstyle=\color{Black}\ttfamily{}, %
+  keywordstyle=[1]\color{DarkSkyBlue}, %
+  keywordstyle=[2]\color{DarkScarletRed}, %
+  keywordstyle=[3]\bfseries{}, %
+  keywordstyle=[4]\color{DarkPlum}, %
+  keywordstyle=[5]\color{SkyBlue}, %
+  commentstyle=\color{Aluminium4}, %
+  stringstyle=\color{Chocolate}, %
+  identifierstyle=\color{Black}, %
+  emphstyle=\color{Black}, %
+  numbers=left, %
+  stepnumber=1, % 
+  frame=tb, %
+  captionpos=b, %
+  lineskip=\smallskipamount{}, %
+  aboveskip=\bigskipamount{}, %
+  belowskip=\medskipamount{}, %
+  commentstyle=\itshape\small{}, %
+  tabsize=2, %
+  breaklines=false, %
+  rulecolor=\color{Black!30}, %
+  showspaces=false, %
+  showstringspaces=false, %
+  showtabs=false, %
+} % chktex 6
+
+
+
+%%%%%%%%%%%% ASTRONOMY %%%%%%%%%%%%%%%%
+% Code from Research Diary Template by Mikhail Klassen
+\newcommand{\Msun}{M_\odot}
+\newcommand{\Lsun}{L_\odot}
+\newcommand{\Rsun}{R_\odot}
+\newcommand{\Mearth}{M_\oplus}
+\newcommand{\Learth}{L_\oplus}
+\newcommand{\Rearth}{R_\oplus}
+
+%%%%%%%%%%% MATHEMATICS %%%%%%%%%%%%%%%
+% Code from Research Diary Template by Mikhail Klassen
+\newcommand{\grad}{\nabla}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\eqnarr}{\begin{eqnarray}}
+\newcommand{\eqnend}{\end{eqnarray}}
+\newcommand{\deriv}[2]{\frac{d #1}{d #2}}
+\newcommand{\bigO}{\mathcal{O}}
+\DeclareMathSymbol{\umu}{\mathalpha}{operators}{0}
+
+%%%%%%%%%%% HEADER / FOOTER %%%%%%%%%%%
+\pagestyle{fancy}
+\setlength\parindent{0in}
+\setlength\parskip{0.1in}
+\setlength\headheight{15pt}
+
+\lhead{\textsc{\userName}}
+\chead{\textsc{Análisis literario}}
+\rhead{\workingDate}
+\cfoot{~~\textit{Última actualización: \today}}
+\rfoot{\textsc{\thepage}}
+
+%%%%%%%%%%% NEW ENVIRONMENTS %%%%%%%%%%
+\newenvironment{projects}%
+	{\section*{Projects \& Collaborations}}%
+	{\vspace{2mm}\hrule\hspace{\stretch{1}}}
+
+\newenvironment{maybe}%
+	{\section*{Someday / Maybe}}%
+	{\vspace{2mm}\hrule\hspace{\stretch{1}}}
+
+%%%%%%%%%%% NEW COMMANDS %%%%%%%%%%%%%%
+\newcommand{\univlogo}{%
+  \noindent
+  \begin{wrapfigure}{r}{0.3\textwidth}
+    \vspace{-33pt}
+    \begin{center}
+      \includegraphics[width=0.3\textwidth]{logo.png}
+    \end{center}
+    \vspace{-105pt}
+  \end{wrapfigure}
+}
+
+\newcommand{\newday}[1]{%
+    \section*{#1}%
+}
+
+
+\title{Breve analisis de un texto literario}
+\date{2071}
+
+\begin{document}
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	Contenidos
+%----------------------------------------------------------------------------------------
+
+
+ultimamente no me es raro encontrar una nota en un diario que hable sobre migraciones masivas. Podría afirmar que el tema se ha vuelto bastante frecuente en los últimos años, pero pecaría ante mi memoria que me recuerda anécdotas previas y similares. ¿Por qué? Tal vez una falta de empatía, una ignorancia total de los hechos o una falta de cultura colectiva, son razones que generalmente le impiden a uno fijarse en este detalle. Eso es lo que expresa Albert Sánchez Piñol en su cuento <<Cuando caían hombres de la Luna>> \citep{Albert}, objeto de esteanálisis. 
+
+el cuento de Sánchez es bastante breve, cuenta en primera persona la experiencia de un hijo de campesinos tras la llegada de los hombres de la Luna a su pueblo. estos hombres de la Luna bajan a la Tierra desprovistos de alimento y refugio, de modo que son contratados por los campesinos para realizar la cosecha pero a medio jornal. sin embargo, son rezagados como algo diferente, ínfimo, sin personalidad ni valor alguno. a la par, los selenitas adquieren rasgos más \emph{humanos}, como el idioma, el tono de piel y su anatomía. los cambios son graduales, reduciendo así la brecha entre un seletina y un humano. no es hasta mucho después que el personaje principal del cuento se da cuenta que su familia había seguido un destino similar.
+
+Desarrollaré mi punto brevemente en cada párrafo. El narrador comenta que la historia lo va acompañando desde que era pequeño, época donde empezaron a llegar los selenitas. Durante este episodio, lo acompaña un padre distante y agresivo, con problemas económicos y poco emotivo. Este comportamiento no es de exclusividad para los hijos, sino que también se extiende hacia los hombres de la Luna. Esto último es algo que el narrador menciona reiteradas veces a lo largo del cuento, lo cual toma como algo normal y no desarrolla postura alguna. Esto lo puedo comparar con algo que leí alguna vez y cuya fuente no logro precisar: <<No es raro que pese a estar conscientes de que existe una tragedia o una emergencia en un país, no nos alertamos hasta que suceda en nuestro país o en países vecinos>>. No nos identificamos con aquellos que son ajenos a nosotros, los vemos como un otro que le sucede algo pero sólo lo tomamos como dato informativo. Esta falta de empatía repercute directamente en la defensa del grupo afectado, nadie defiende ni lucha por los derechos de los selenitas, no se concibe siquiera una figura de derecho ante cualquier injusticia que pueda surgir o que esté ocurriendo. Actualmente existe una crisis humanitaria en Europa, migrantes de Siria buscan todos los medios para huir de su patria en búsqueda de estabilidad y de refugio. Aquí en Hispanoamérica recibimos una noticia cada medio mes y con eso nos basta, vemos algo que nos resulta ajeno, de otro continente, y no tomamos postura alguna en ello. Pero este no es un fenómeno intercontinental. En la región hay dos países con movimientos subversivos activos: méxico y colombia. Se estima que, únicamente en 2015, alrededor de \(135\, 000\) personas fueron asesinadas en América Latina y el Caribe \citep{Ruben}.
+Este es un número alarmante y sin embargo, son temas que son ignorados por la prensa de alto alcance. La prensa lo desmerece, la información se convierte en un tema rebuscado y las distracciones de la cotidianidad impiden que le prestemos atención; es decir, perdemos empatía.
+
+El hecho analizado anteriormente viene de la mano de la ignorancia del pueblo. Nadie conocía a los hombres de la Luna, sus costumbres, su idioma, sus problemas y ni siquiera la razón por la cual migraron. Como mencioné anteriormente, al desconocer las causas de un drama humanitaria nos tornamos ajenos a la causa. Pero esto no tiene efectos a corto plazo, como es el caso de la empatía, la cual se logra superar con la interacción como cuenta el narrador al denotar que un selenita obtuvo un préstamo de su padre. Al ignorar elementos que determinan la personalidad de un grupo dentro del proceso de adaptación de dicho grupo, aquellos que lo integran van dejando atrás sus raíces, los elementos que los distinguían y hasta su lenguaje. Esto es comparable con el movimiento migratorio de Ecuador tras el cambio de moneda del 99. Personas que salieron del país hacia Estados Unidos o España, dejaron atrás sus costumbres, comida, lenguaje y apariencia, para volver años después convertidos en otras personas, no identificables entre aquellos que solían llamar familia. 
+
+Finalmente está la pérdida de una identidad cultural como un todo. El narrador indica que los selenitas tomaban como poca cosa la pérdida de sus rasgos característicos: los cuernos y la piel de jirafa. Sin embargo, los selenitas solían mantenerse unidos, como un grupo; pero poco después esto cambia, la unidad se empieza a perder a favor de la integración total en el grupo de personas que los acogió y controló. En las últimas dos páginas del cuento, el narrador nos muestra el inicio de esta pérdida cultural y sus efectos: Al inicio los hombres de la Luna están conscientes de la pérdida de su identidad y lo ven como algo ligero y necesario. Luego el narrador encuentra uno que a simple vista parecía humano, uno que no quería rechazar su pasado pero tampoco reconocerlo, uno con vergüenza. Finalmente, accidentalmente encuentra evidencia y comprueba, mediante palabras de su abuela, que su familia desciende de los hombres de la Luna. Información que fue ocultada por la familia desde tiempo atrás y que ahora mostraba que no eran diferentes de los selenitas, tenían un origen común. La pérdida de la historia familiar refleja la pérdida de la cultura a favor de la cohesión. Cohesión que empieza a resaltar los rasgos comunes y que al final permite determinar, demasiado tarde, que los grupos involucrados no requerían posicionarse puesto que consistían de la misma gente, las mismas personas pero en tiempos diferentes.
+
+
+% Empatía
+% Ignorancia
+% Cultura
+\noindent
+para concluir el cuento de Albert relata el proceso de adaptación de un grupo que entra en contacto con otro que lo domina la carencia de empatía la ignorancia respecto a la identidad del grupo y de uno mismo y la carencia de una cultura común la cual fue olvidada tiempo atrás son factores que inciden en este proceso es más son los factores que inciden en su inicio y desarrollo. Aún así, este proceso empuja a que nos fijemos en los detalles que nos conectan, en los antecedentes y relacionemos nuestra propia historia con la de los otros. Esto nos da paso a que intentemos recuperar el daño, se re-escriba la historia y no se quede atrás la identidad de un pueblo. En mi opinión, el hecho que esto suceda o no, es cuestión de aceptar la identidad perdida y dejar atrás el resentimiento y vergüenza con nuestro propio pasado.
+
+\hrulefill
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{}{Sobre los hombres de la Luna}
+
+[...]\footnote{Extracto del texto mencionado de Albert Sánchez Piñol.} 
+Me dijeron que no. Más o menos como las uñas y los callos, que los cortas y no pasa nada. Todo esto me lo explicaron en mi idioma. A estas alturas ya habían aprendido a hablarlo muy bien, tan bien que cuando cerrabas los ojos ya no sabías si te dirigía la palabra un hombre de la Luna o un hombre del pueblo. Así pues, sin la piel ni los cuernos de jirafa, ¿qué diferencia había entre los hombres de la Luna y nosotros? Yo ya había visto muchos, y supongo que los niños, como los viejos, tienen una memoria que les hace recordar cosas que los demás no pueden o no quieren recordar. Una tarde me pasó lo siguiente.
+
+Había ido desde el pueblo con la bicicleta. Un señor se cruzó conmigo en dirección contraria. Era un señor como cualquier otro. Ni rico ni pobre, ni alto ni bajo, ni gordo ni flaco. Pero cuando ya se alejaba me volví. No sé porqué me volví. La cuestión es que me volví.
+
+--Tú eres el hombre de la Luna, ¿verdad que sí? --dije--. Aquel que tenía frío en el establo y cogía aceitunas.
+
+Se sorprendió mucho. Miró a derecha e izquierda, como si tuviese miedo de que alguien nos oyera. No se atrevía a negarme la verdad, tampoco le gustaba recordarla.
+
+--Yo soy fontanero --se limitó a decir.
+
+Y se fue con la cabeza gacha y las manos en los bolsillos, con paso rápido. Cuando giraba la esquina miró atrás, no fuese a seguirle.
+
+Fue un día muy extraño. Cuando regresaba a casa noté que el último diente de leche se me movía. El camino estaba plagado de baches y el diente recibía una sacudida cada vez que una rueda tropezaba con ellos. Antes de llegar a casa se me cayó, sin dolor, como caen las hojas de los árboles o los cuernos de los hombres de la Luna.
+
+No era una mala noticia. La tradición decía que los niños debíamos guardar los dientes de leche en una caja de porcelana que teníamos en la vitrina. Pensándolo bien era una tradición macabra, porque la cajita de porcelana parecía un cementerio de dentaduras. Pero cada vez que se me caía un diente lo metía en la puñetera cajita. [...]
+
+Por lo que fuera, aquel día ya no miré la vitrina con los ojos de un niño. Quizás porque era el último diente de leche, no lo sé. Lo cierto es que detrás de la cajita vi cuatro cuernos muy parecidos a los del hombre de la Luna. Nunca me había fijado. Ahora sí. ¿Qué demonios hacían, allí, en nuestra vitrina, unos cuernos de hombre de la Luna? Los cogí y los hice rodar por la mesa, como dados cilíndricos.
+
+--¡Papá! ¡Mira! --exclamé.
+
+Mi padre no dijo nada. Mi abuelo tampoco. Mi hermano tampoco. Mi abuela sí. Estiró el brazo por encima del mantel, poco a poco, hasta tocar los cuernecitos con la punta de los dedos. Aquel contacto hizo que llorara. Se quitó las gafas. Yo nunca había visto a mi abuela sin gafas y llorando.
+
+--- ---Cuando hago memoria --dijo la abuela--. recuerdo paisajes de un gris dulce. Recuerdo el pequeno crater donde vivíamos, y los rincones de aquella madriguera. Recuerdo la bola asul, que se recortaba en el cielo, y las promesas de mi novio mientras la mirabamos, embelesados. Pero cuando hago memoria tambien recuerdo cosas que dan miedo. recuerdo la estrella fugaz donde hicimos el viaje, tan pequeña, y como caímos en un prado verde, y recuerdo todos los sufrimientos que vinieron, tan lejos de nuestra luñita. Cuando hago memoria...
+
+Mi padre dio un puñetazo en la mesa. Los vasos dieron un saltito y derramaron vivo con gaseosa.
+
+--Abuela, calle.
+
+--¡Muuu! --hizo la vaca.
+
+
+
+\nocite{Albert}
+\bibliographystyle{plain}
+\bibliography{Citas}
+
+% Encoding: UTF-8
+
+@InBook{Albert,
+  title     = {Voces: {A}ntolog\'ia de narrativa catalana contempor\'anea},
+  publisher = {Anagrama},
+  year      = {2010},
+  author    = {Albert S\'anchez Pi{\~n}ol},
+  editor    = {Lolita Bosch},
+  address   = {Barcelona},
+  isbn      = {9788433972170},
+  note      = {Cuando ca\'ian hombres de la {L}una. P\'aginas 57-67},
+  ean       = {9788433972170},
+  pagetotal = {352},
+  url       = {http://www.ebook.de/de/product/13233679/voces.html},
+}
+
+@ONLINE{Ruben,
+author = {Rub\'en Aguilar Valenzuela},
+title = {Violencia en {A}mérica {L}atina},
+year = {2016},
+url = {http://eleconomista.com.mx/columnas/columna-especial-politica/2016/10/18/violencia-america-latina},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
+
+\end{document}
