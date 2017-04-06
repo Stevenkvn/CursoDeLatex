@@ -1,0 +1,43 @@
+%clase de texto matemático
+% Clase del documento
+\documentclass[a5paper, 12pt]{article}
+
+% Paquetes
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[top=2cm, left=2cm]{geometry}
+\usepackage{amsmath, amssymb, amsfonts, latexsym}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{multicol}
+\usepackage{nicefrac}
+\usepackage{ marvosym }
+% Comandos
+\parindent = 0mm
+
+\author{Kevin}
+
+\title{Clase De Texto Matemático}
+
+\date{\today}
+
+% Contenido
+
+\begin{document}
+\maketitle
+ La optimizacion de funciones no es un tema analizado únicamente con herramientas del calculo en una variable y de la programación lineal. esta se puede generealizar a espacios mas generales como los espacion de Banach. A continuacion se presenta el siguiente problema de optimizacion:
+ 
+ \[
+ minJ(u,y,a)=\int_{0}^{a} (u^,(x))^2 dx +  \int_{0}^{a} y(x)^2dx + \dfrac{a^2}{med(0,a,a,a^2)^,}
+\]
+
+sujeta a
+\[-u^,,(x) + \alpha(x)u(x)=y(x) en (0,a),\]
+\[u=0 en{0,a},\]
+\[\displaystyle\lim_{x\to a} f(a)\]
+\[a\geq4\]
+
+
+
+
+\end{document}
